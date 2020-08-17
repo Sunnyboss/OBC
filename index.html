@@ -1,123 +1,120 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#2196f3">
-<meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
-<title>Framework7</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://framework7.io/kitchen-sink/core/css/app.css">
-<link rel="apple-touch-icon" href="https://framework7.io/img/f7-icon-square.png">
-<link rel="icon" href="https://framework7.io/img/f7-icon.png">
-<script src="https://c.vi-serve.com/viadshtml/vi.min.js"></script>
+  <meta charset="UTF-8">
+  <title>CodePen - Hamburger Menu using AlpineJS and TailwindCSS</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.min.css'>
 
 <style>
-
-a {
-    text-decoration: none;
-    color: black;
-    font-family: sans-serif;
+    .list {
+    background: #fafafa;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 0.5px solid #c8c8c8;
+    display: flex;
 }
 
+.icon {
+
+width: 2em;
+padding: 5px;
+
+
+}
+
+.title {
+
+    width: 20em;
+    padding: 5px;
+    float: left;
+    margin-left: 20px;
+
+}
+
+    .bg-nav {
+        background: rgb(250, 250, 250);
+        width: 100%; ;
+        border-bottom: 1px solid #cccccc;
+        margin-bottom: 20px;
+    }
+
+    .menu {
+        margin-left:10px ;
+    }
 </style>
 
 </head>
 <body>
-    
+<!-- partial:index.partial.html -->
+<div class="bg-nav" x-data="{showMenu : false}">
+        <button @click.prevent="showMenu = !showMenu " class="px-2 py-4 flex justify-between text-white">
+            <img src="https://image.flaticon.com/icons/svg/566/566020.svg" width="22" height="22" class="menu">
+        </button>
+        <div x-show="showMenu">
+            <button @click.prevent="showMenu = !showMenu " class="px-2 py-4 font-bold flex justify-between text-blue-900 w-full border-b border-blue-900 bg-white">
+                Menu
+                <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <nav class="flex flex-col">
+                <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+                    Home
+                    <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
+                </a>
+                <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+                    About
+                    <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
+                </a>
+                <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+                    Services
+                    <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
+                </a>
+                
+                <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+                    Contact us
+                    <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
+                </a>
+            </nav>
+        </div>
+    </div><!-- .bg-blue-500 -->
+<!-- partial -->
+<div class="list">
+    <div class="icon"><a href="http://obcforum.com/"><img width="22" height="22" src="https://image.flaticon.com/icons/svg/3215/3215138.svg"></div>
+    <div class="title">OBC Forum</a></div>
+</div>
 
-<div class="navbar" style="height: 2.2em;">
-    <div class="navbar-bg"></div>
-    <div class="navbar-inner sliding">
-    <div class="left">
+<div class="list">
+    <div class="icon"><a href="https://obc-media.000webhostapp.com/index.html"><img width="22" height="22" src="https://image.flaticon.com/icons/svg/2881/2881114.svg"></div>
+    <div class="title">OBC TV</a></div>
 </div>
-<div class="title">OBC</div>
-<div class="right">
+
+<div class="list">
+    <div class="icon"><a href="https://Obcforum.com/census/"><img width="22" height="22" src="https://image.flaticon.com/icons/svg/1632/1632651.svg"></div>
+    <div class="title">OBC Survey</a></div>
 </div>
+
+<div class="list">
+    <div class="icon"><a href="http://literatureslab.com"><img width="22" height="22" src="https://image.flaticon.com/icons/svg/926/926321.svg"></div>
+    <div class="title">Literatures-lab </a></div>
 </div>
-</div>
+
 
 
 <div class="list">
-<ul>
+    <div class="icon"><a href=""><img width="22" height="22" src="https://image.flaticon.com/icons/svg/3050/3050525.svg"></div>
+    <div class="title">Discussion and Debate</a></div>
+</div>
 
-
-        <li>
-        <div class="item-content">
-        <div class="item-media"><img width="22" height="22" src="https://image.flaticon.com/icons/svg/3215/3215138.svg"></div>
-        <div class="item-inner">
-         <div class="item-title"><a href="http://obcforum.com/">OBC Forum</a></div>
-        </div>
-        </div>
-        </li>
-
-            <li>
-            <div class="item-content">
-            <div class="item-media"><img width="22" height="22" src="https://image.flaticon.com/icons/svg/2921/2921855.svg"></div>
-            <div class="item-inner">
-             <div class="item-title"><a href="">Kishan portal</a></div>
-            </div>
-            </div>
-            </li>
-
-             <li>
-            <div class="item-content">
-            <div class="item-media"><img width="22" height="22" src="https://image.flaticon.com/icons/svg/2905/2905024.svg"></div>
-            <div class="item-inner">
-            <div class="item-title"><a href="">Bahujan Matrimony</a></div>
-            </div>
-            </div>
-            </li>
-
-
-             <li>
-            <div class="item-content">
-            <div class="item-media"><img width="22" height="22" src="https://image.flaticon.com/icons/svg/2881/2881114.svg"></div>
-            <div class="item-inner">
-           <div class="item-title"><a href="https://obc-media.000webhostapp.com/index.html">OBC TV</a></div>
-            </div>
-            </div>
-            </li>
-
-             <li>
-            <div class="item-content">
-            <div class="item-media"><img width="22" height="22" src="https://image.flaticon.com/icons/svg/1632/1632651.svg"></div>
-            <div class="item-inner">
-            <div class="item-title"><a href="https://Obcforum.com/census/">OBC Survey</a></div>
-            </div>
-            </div>
-            </li>
-
-               <li>
-            <div class="item-content">
-            <div class="item-media"><img width="22" height="22" src="https://image.flaticon.com/icons/svg/3050/3050525.svg"></div>
-            <div class="item-inner">
-             <div class="item-title"><a href="">Discussion and Debate</a></div>
-            </div>
-            </div>
-            </li>
-
-                <li>
-            <div class="item-content">
-            <div class="item-media"><img width="22" height="22" src="https://image.flaticon.com/icons/svg/926/926321.svg"></div>
-            <div class="item-inner">
-            <div class="item-title"><a href="http://literatureslab.com">Literatures-lab </a></div>
-            </div>
-            </div>
-            </li>
-
-        
-
-</ul>
+<div class="list">
+    <div class="icon"><a href=""><img width="22" height="22" src="https://image.flaticon.com/icons/svg/2905/2905024.svg"></div>
+    <div class="title">Bahujan Matrimony</a></a></div>
 </div>
 
 
 
 
-<script src="https://framework7.io/packages/core/js/framework7.bundle.min.js"></script>
-<script src="https://framework7.io/kitchen-sink/core/js/routes.js"></script>
-<script src="https://framework7.io/kitchen-sink/core/js/app.js"></script>
+  <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js'></script>
 </body>
 </html>
